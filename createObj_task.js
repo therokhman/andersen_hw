@@ -56,5 +56,15 @@ function getPersons(name, age) {
         age
     }));
 
-    return [person1, person2, person3, person4, person5, person6, person7, person8, person9, person10];
+    function PersonWithPrototype(name, age) {
+        const person = {
+            name,
+            age
+        };
+        Object.setPrototypeOf(person, PersonWithPrototype.prototype);
+        return person;
+    };
+    const person11 = new PersonWithPrototype(name,age);
+
+    return [person1, person2, person3, person4, person5, person6, person7, person8, person9, person10, person11];
 }
